@@ -175,16 +175,23 @@ module.exports = function (eleventyConfig) {
   });
   eleventyConfig.addCollection("tagList", require("./_11ty/getTagList"));
   eleventyConfig.addPassthroughCopy("img");
-  eleventyConfig.addPassthroughCopy("css");
+  eleventyConfig.addPassthroughCopy("posts/img/*.{jpg,png,gif}");
+  eleventyConfig.addPassthroughCopy({"posts/img/*": "img/remote"});
+  //eleventyConfig.addPassthroughCopy("css");
+  eleventyConfig.addPassthroughCopy("assets");
   // We need to copy cached.js only if GA is used
   eleventyConfig.addPassthroughCopy(GA_ID ? "js" : "js/*[!cached].*");
   eleventyConfig.addPassthroughCopy("fonts");
   eleventyConfig.addPassthroughCopy("_headers");
+  eleventyConfig.addPassthroughCopy("node_modules/@fortawesome/fontawesome-free/webfonts");
+  eleventyConfig.addPassthroughCopy("node_modules/@fortawesome/fontawesome-free/svgs");
 
   // We need to rebuild upon JS change to update the CSP.
   eleventyConfig.addWatchTarget("./js/");
   // We need to rebuild on CSS change to inline it.
-  eleventyConfig.addWatchTarget("./css/");
+  //eleventyConfig.addWatchTarget("./css/");
+
+  eleventyConfig.addWatchTarget("./assets/");
   // Unfortunately this means .eleventyignore needs to be maintained redundantly.
   // But without this the JS build artefacts doesn't trigger a build.
   eleventyConfig.setUseGitIgnore(false);

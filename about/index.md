@@ -1,10 +1,10 @@
 ---
 layout: layouts/base.njk
 title: About
-templateClass: tmpl-post
+templateClass: blog-image 
 eleventyNavigation:
   key: About
-  order: 3
+  order: 4
 ---
 
 I am a person that writes stuff.
