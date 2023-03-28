@@ -20,6 +20,9 @@ jobs:
 
       - name: Install Dependencies
         run: npm install
+      
+      - name: Generate assets
+        run: npm run prod:parcel
 
       - name: Build Site with Eleventy
         run: npm run build
