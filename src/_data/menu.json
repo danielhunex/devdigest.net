@@ -1,0 +1,16 @@
+[
+    {
+        "label": "Home",
+        "url": "/",
+        "newTab": true
+    },
+    {
+        "label": "Tags",
+        "url": "/tags",
+        "newTab": true
+    },
+    {
+        "label": "About",
+        "url": "/about"
+    }
+]
