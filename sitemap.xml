@@ -1,187 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  
-  
-  
-  
-  
-  
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+    <url><loc>https://devdigest.net/comparing-yourself/</loc></url>
+    <url><loc>https://devdigest.net/small-business/</loc></url>
+    <url><loc>https://devdigest.net/fearlessness/</loc></url>
+    <url><loc>https://devdigest.net/stop-procrastinating/</loc></url>
+    <url><loc>https://devdigest.net/much-to-do/</loc></url>
+    <url><loc>https://devdigest.net/untitiled-2/</loc></url>
+    <url><loc>https://devdigest.net/untitled-1/</loc></url>
+    <url><loc>https://devdigest.net/untitled-3/</loc></url>
+    <url><loc>https://devdigest.net/untitled-4/</loc></url>
+    <url><loc>https://devdigest.net/untitled-post/</loc></url>
+    <url><loc>https://devdigest.net/traveling-ultralight/</loc></url>
+    <url><loc>https://devdigest.net/typography/</loc></url>
+    <url><loc>https://devdigest.net/404.html</loc></url>
+    <url><loc>https://devdigest.net/about/</loc></url>
+    <url><loc>https://devdigest.net/</loc></url>
+    <url><loc>https://devdigest.net/search/</loc></url>
+    <url><loc>https://devdigest.net/tags/</loc></url>
     
-  
-  <url>
-    <loc>https://devdigest.net/posts/firstpost/</loc>
-    <lastmod>2023-03-28T00:36:02.000Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
-  
-    
-  
-  <url>
-    <loc>https://devdigest.net/posts/secondpost/</loc>
-    <lastmod>2023-03-28T00:36:02.000Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
-  
-    
-  
-  <url>
-    <loc>https://devdigest.net/posts/thirdpost/</loc>
-    <lastmod>2023-03-28T00:36:02.000Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
-  
-    
-  
-  <url>
-    <loc>https://devdigest.net/posts/fourthpost/</loc>
-    <lastmod>2023-03-28T00:36:02.000Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
-    
-  
-  
-    
-  
-  <url>
-    <loc>https://devdigest.net/posts/optional-chaining/</loc>
-    <lastmod>2023-03-28T00:36:02.000Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
-    
-  
-  
-  <url>
-    <loc>https://devdigest.net/about/</loc>
-    <lastmod>2023-03-28T00:36:17.136Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
-    
-  
-  
-  <url>
-    <loc>https://devdigest.net/posts/</loc>
-    <lastmod>2023-03-28T00:36:17.136Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
-    
-  
-  
-  <url>
-    <loc>https://devdigest.net/</loc>
-    <lastmod>2023-03-28T00:36:17.188Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
-    
-  
-  
-  <url>
-    <loc>https://devdigest.net/page-list/</loc>
-    <lastmod>2023-03-28T00:36:17.188Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
-    
-  
-  
-  <url>
-    <loc>https://devdigest.net/tags/</loc>
-    <lastmod>2023-03-28T00:36:17.196Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
-    
-  
-  
-  <url>
-    <loc>https://devdigest.net/tags/another-tag/</loc>
-    <lastmod>2023-03-28T00:36:17.196Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
-    
-  
-  
-  <url>
-    <loc>https://devdigest.net/tags/number-2/</loc>
-    <lastmod>2023-03-28T00:36:17.196Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
-    
-  
-  
-  <url>
-    <loc>https://devdigest.net/tags/second-tag/</loc>
-    <lastmod>2023-03-28T00:36:17.196Z</lastmod>
-  </url>
-  
-  
-  
-  
-  
-  
-    
-  
-  
-  <url>
-    <loc>https://devdigest.net/tags/typescript/</loc>
-    <lastmod>2023-03-28T00:36:17.196Z</lastmod>
-  </url>
 </urlset>
