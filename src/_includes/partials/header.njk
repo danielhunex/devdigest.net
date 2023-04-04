@@ -1,0 +1,31 @@
+<header id="header" class="bg-primary text-white py-4 px-6">
+  <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between">
+    <div class="w-full sm:w-auto sm:mr-8">
+      <a class="flex items-center" href="{{ '/' | url }}">
+        <span class="text-xl text-accent font-semibold self-center">{{ site.title }}</span>
+      </a>
+    </div>
+    <div id="menu-toggle" class="flex items-center md:hidden text-secondary hover:text-accent cursor-pointer sm:ml-6" aria-label="Toggle menu">
+      {% include "icons/menu.svg" %}
+    </div>
+    <nav id="menu" class="order-last md:order-none items-center flex-grow w-full md:w-auto md:flex hidden mt-2 md:mt-0" aria-label="Main menu">
+      <div class='flex flex-wrap items-center text-base justify-center'>
+        {% for item in menu %}
+        <a href="{{ item.url | url }}" {% if item.newTab %} target="_blank" rel="noopener" {% endif %} class="mx-4 hover:text-secondary" aria-label="{{ item.label }}">{{ item.label }}</a>
+        {% endfor %}
+      </div>
+    </nav>
+    <form id="search" action="{{ '/search' | url }}" class="order-last sm:order-none flex-grow items-center justify-end hidden sm:block mt-6 sm:mt-0">
+      <label class="visually-hidden" for="header-searchbox">Search here ...</label>
+      <input
+        type="text"
+        id="header-searchbox"
+        name="q"
+        placeholder="Search here ..."
+        class="w-full sm:max-w-xs bg-slate-200 border border-transparent float-right focus:bg-white focus:border-slate-300
+                    focus:outline-none h-8 p-4 placeholder-slate-500 rounded text-slate-700 text-sm"
+        aria-label="Search"
+        autocomplete="off">
+    </form>
+  </div>
+</header>
