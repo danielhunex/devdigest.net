@@ -1,13 +1,11 @@
 [
     {
         "label": "Home",
-        "url": "/",
-        "newTab": true
+        "url": "/"
     },
     {
         "label": "Tags",
-        "url": "/tags",
-        "newTab": true
+        "url": "/tags"
     },
     {
         "label": "About",

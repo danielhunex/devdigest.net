@@ -1,17 +1,19 @@
 ---
 layout: default
 title: Tag List
+subTitle: "All tags"
 permalink: "tags/index.html"
 ---
 
-<div class="mb-4 text-left">
-    <h1  class="mb-4 text-3xl sm:text-4xl tracking-tight text-secondary-900 font-extrabold">{{ title| capitalize }}</h1>
-</div>
-<div class="flex justify-left flex-wrap">
-    {% for name, length in collections.tagList %}
-    <a href="{{ '/tags/' | url }}{{ name }}" class="inline-block mx-1 mb-3 px-4 py-2 bg-primary text-secondary font-medium rounded-full">
-        {{ name | capitalize }}
-        <span class="px-2 py-1 ml-1 text-xs font-semibold bg-secondary-50 text-teal-800 rounded-full">{{ length }}</span>
-    </a>
-    {% endfor %}
-</div>
+
+
+    {%include "partials/title.njk" %}
+    
+    <div class="flex justify-left flex-wrap">
+        {% for name, length in collections.tagList %}
+        <a href="{{ '/tags/' | url }}{{ name }}" class="inline-block mx-1 mb-3 px-4 py-2 bg-primary text-secondary font-medium rounded-full">
+            {{ name | capitalize }}
+            <span class="px-2 py-1 ml-1 text-xs font-semibold bg-secondary-50 text-teal-800 rounded-full">{{ length }}</span>
+        </a>
+        {% endfor %}
+    </div>

@@ -5,11 +5,13 @@ pagination:
     size: 1
     alias: paged
 permalink: "{% if paged.number > 1 %}page/{{ paged.number }}/{% endif %}index.html"
+title: Latest Articles
+subTitle: All the latest article from DevDigest
 ---
 
-<div class="flex flex-wrap mx-2">
+
+    {%include "partials/title.njk" %}
     {% include "partials/post-grid.njk" %}
-</div>
 
 {% if collections.posts.length > site.paginate %}
 {% include "partials/paginator.njk" %}

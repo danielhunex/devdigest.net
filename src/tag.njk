@@ -8,14 +8,11 @@ pagination:
 permalink: "tags/{{ paged.tagName }}/{% if paged.number > 1 %}{{ paged.number }}/{% endif %}index.html"
 eleventyComputed:
     title: "Tagged with \"{{ paged.tagName | capitalize }}\""
+    subTitle: "All articles tagged with \"{{ paged.tagName | capitalize }}\" "
 ---
 
-<div class="mb-4 text-left">
-    <h1 class="text-4xl font-medium leading-normal mt-0 text-secondary">{{ paged.tagName | capitalize }}</h1>
-</div>
-<div class="flex mx-2">
+    {%include "partials/title.njk" %}
     {% include "partials/post-grid.njk" %}
-</div>
 
 {% if collections.tagList[paged.tagName] > site.paginate %}
 {% include "partials/paginator.njk" %}

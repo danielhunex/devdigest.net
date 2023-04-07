@@ -17,7 +17,6 @@ module.exports = (config) => {
   config.addCollection('pagedPosts', require('./lib/collections/pagedPosts'));
   config.addCollection('pagedPostsByTag', require('./lib/collections/pagedPostsByTag'));
 
-  console.log("This should be printed out .Otherwise it is a joke")
   return {
     dir: {
       input: 'src',
