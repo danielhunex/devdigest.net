@@ -1,6 +1,7 @@
 module.exports = (config) => {
   config.addPassthroughCopy('src/assets/img/**/*');
   config.addPassthroughCopy({ 'src/posts/img/**/*': 'assets/img/' });
+  config.addPassthroughCopy({"src/_includes/icons":"icons/"})
 
   config.addWatchTarget("src/assets/js/");
 
@@ -16,6 +17,8 @@ module.exports = (config) => {
   config.addCollection('tagList', require('./lib/collections/tagList'));
   config.addCollection('pagedPosts', require('./lib/collections/pagedPosts'));
   config.addCollection('pagedPostsByTag', require('./lib/collections/pagedPostsByTag'));
+  
+  config.addPlugin(require("./lib/img-dim.js"));
 
   return {
     dir: {
