@@ -15,7 +15,7 @@
           <div class="md:w-1/3 md:order-last hidden md:flex ml-4 md:mb-2">
           {% endif %}
               <a href="{{ post.url }}">
-                <img class="rounded-lg h-auto w-full lazy" src="{% if post.data.thumb %}{{ post.data.thumb | url }}{% else %}{{ '/assets/img/no-image.svg' | url }}{% endif %}" alt="{{ post.data.title }}">
+                <img class="rounded-lg h-auto w-full lazy" src="{% if post.data.thumb %}{{ post.data.thumb | url }}{% else %}{{ '/assets/img/no-image.png' | url }}{% endif %}" alt="{{ post.data.title }}">
                 
               </a>
           </div>
