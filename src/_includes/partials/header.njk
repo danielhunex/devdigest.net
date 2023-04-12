@@ -1,17 +1,18 @@
 <header id="header" class="bg-primary text-white py-4 px-6">
   <div class="flex flex-wrap  justify-between">
     <div class="w-full sm:w-auto font-semibold">
-      <svg viewBox="0 0 248 32" xmlns="http://www.w3.org/2000/svg" class="h-6 w-auto mb-2 sm:mb-0">
-        <polygon points="16,32 32,24 32,8 16,0 0,8 0,24" fill="#00857B" stroke-width="1" stroke="#4FD1C5" />
-        <text x="16" y="16" font-size="10" fill="#E2E8F0" text-anchor="middle" alignment-baseline="central">
-          &lt;/D&gt;
-        </text>
-        <text x="40" y="22" font-size="18" fill="#E2E8F0">DevDigest</text>
-      </svg>   
-       
-    
+      <a href="{{'/' | url}}" aria-label="Link to {{site.title}} home">
+        <svg viewBox="0 0 248 32" xmlns="http://www.w3.org/2000/svg" class="h-6 w-auto mb-2 sm:mb-0"
+          aria-label="Site Logo">
+          <polygon points="16,32 32,24 32,8 16,0 0,8 0,24" fill="#00857B" stroke-width="1" stroke="#4FD1C5" />
+          <text x="16" y="16" font-size="10" fill="#E2E8F0" text-anchor="middle" alignment-baseline="central">
+            &lt;/D&gt;
+          </text>
+          <text x="40" y="22" font-size="18" fill="#E2E8F0">DevDigest</text>
+        </svg>
+      </a>
     </div>
-   
+
     <div id="menu-toggle" class="flex items-center md:hidden text-secondary hover:text-accent cursor-pointer sm:ml-6"
       aria-label="Toggle menu">
       {% include "icons/menu.svg" %}
@@ -34,7 +35,7 @@
           {% endfor %}
         </div>
       </nav>
-      <form id="search" action="{{ '/search' | url }}"
+      <form id="search" action="{{ '/search' | url }}" aria-label="Search box"
         class="order-last sm:order-none flex-grow items-center justify-end hidden sm:block mt-6 sm:mt-0">
         <label class="visually-hidden" for="header-searchbox">Search here ...</label>
         <input type="text" id="header-searchbox" name="q" placeholder="Search here ..."
