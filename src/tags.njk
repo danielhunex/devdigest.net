@@ -10,9 +10,9 @@ permalink: "tags/index.html"
 <div class="flex justify-left flex-wrap">
   {% for name, length in collections.tagList %}
   <a href="{{ '/tags/' | url }}{{ name }}" aria-label="Link to post with tag {{ name }}"
-    class="inline-block mx-1 mb-3 px-4 py-2 bg-primary text-secondary font-medium rounded-full">
-    {{ name | capitalize }}
-    <span class="px-2 py-1 ml-1 text-xs font-semibold bg-secondary-50 text-teal-800 rounded-full">{{ length }}</span>
+    class="inline-block mx-1 mb-3 px-4 py-2 bg-primary-900 text-accent-500  font-medium rounded-sm">
+    #{{ name | capitalize }}
+    <span class="px-2 py-1 ml-1 text-xs font-semibold border-2 border-secondary-50 bg-primary-900 text-accent-500 rounded-full">{{ length }}</span>
   </a>
   {% endfor %}
 </div>

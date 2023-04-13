@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-US">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -43,10 +43,10 @@
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | url }}" />
   </head>
 
-  <body class="flex flex-col min-h-screen bg-white text-slate-800 break-words">
+  <body class="flex flex-col min-h-screen bg-secondary-50 text-secondary-800 break-words">
     {% include "partials/header.njk" %}
     <div class="flex flex-grow flex-col md:flex-row">
-      <div class="bg-secondary-50 p-4 hidden md:flex md:w-1/4">
+      <div class="bg-accent-50 p-4 hidden md:flex md:w-1/4">
         <div class="mb-4">
           <img
             src="/assets/img/me.jpg"
@@ -55,7 +55,7 @@
           />
         </div>
       </div>
-      <main class="bg-white mx-7 lg:mx-6 mt-4 md:w-3/4 flex-grow">
+      <main class="bg-secondary-50 mx-7 lg:mx-6 mt-4 md:w-3/4 flex-grow">
         {% if layout === "post" %}
         {{ content | safe }}
         {% else %}
