@@ -7,7 +7,7 @@ tags: popular
 ---
 
 I’m on a trip at the moment, and a friend who generously let me sleep on his couch looked at my small travel backpack and commented on how little I travel with: “That’s impressive,” he said.
-
+<!-- excerpt -->
 I was a little surprised, because though I’ve gotten that comment before, it’s become normal for me to travel with just a small bag (10 lbs. or less, usually), and I have friends who travel with even less. But then I remembered that I’m far from normal in this way.
 
 I gave him a tip for getting started, and I recommend it for all of you, who want to travel light — or ultralight, as I call it, because for many people traveling light is taking a carry-on roller luggage. For me, having those roller bags is lugging too much, because you can run up stairs with it with ease, or carry it all over a city without worrying about stowing away your luggage somewhere first. It’s so much easier to travel ultralight.

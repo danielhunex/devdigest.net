@@ -3,7 +3,6 @@ description: "Example of post without a title"
 date: 2020-04-20T18:30
 thumb: "windows-7.jpg"
 tags: sample
-excerpt: Concerns greatest margaret him absolute entrance nay. Door neat week do find past he. Be no surprise he honoured indulged. Unpacked endeavor six steepest had husbands her. Painted no or affixed it so civilly. Exposed neither pressed so cottage as proceed at offices. Nay they gone sir game four. Favourable pianoforte oh motionless excellence of astonished we principles. Warrant present garrets limited cordial in inquiry to. Supported me sweetness behaviour shameless excellent so arranging.
 title: The Great Gatsby
 ---
 
