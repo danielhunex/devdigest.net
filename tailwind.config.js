@@ -54,7 +54,7 @@ module.exports = {
           css: {
             blockquote: {
               fontWeight: "normal",
-              color: theme("colors.slate.600"),
+              color: theme("colors.secondary.600"),
             },
             "blockquote p:first-of-type::before": {
               content: "",
