@@ -23,14 +23,15 @@
         <div class="md:w-2/3 w-full">
 
           <p class="text-secondary-600 mb-4">{{ post.data.page.excerpt }}</p>
-          <a class="flex items-center text-sm text-accent-500 font-medium mb-4" href="{{ post.url }}"
+          <a class="flex items-center text-sm text-accent-700 font-medium mb-4" href="{{ post.url }}"
             aria-label="Link to {{ post.url }}">
-            <span class="relative">Read more</span>
-            <svg class="relative mt-px overflow-visible ml-2.5 text-accent-300" width="3" height="6" viewBox="0 0 3 6"
-              class="Read more link icon" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-              stroke-linejoin="round">
-              <path d="M0 0L3 3L0 6"></path>
-            </svg>
+            <span class="relative flex items-center">Read more
+              <svg class="relative overflow-visible ml-2 mt-1 self-center text-accent-700" width="3" height="6"
+                viewBox="0 0 3 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round">
+                <path d="M0 0L3 3L0 6"></path>
+              </svg>
+            </span>
           </a>
           <div class="flex flex-wrap">
             {% for tag in post.data.tags %}
