@@ -2,10 +2,12 @@
   <a href="{% if not paged.first %}{{ pagination.href.previous | url }}{% else %}javascript:void(0){% endif %}"
     aria-label="Link to previous page"
     class="float-left bg-secondary-100 font-semibold border rounded shadow-md w-24 border-accent-700 py-1
-     text-accent-900 {% if not paged.first %}cursor-pointer hover:text-accent-700{% else %}cursor-default text-opacity-50{% endif %} text-center">
+     text-accent-900 {% if not paged.first %}cursor-pointer hover:text-accent-700{% else %}cursor-default bg-secondary-200 text-secondary-700{% endif %} text-center"
+     {% if paged.first %}aria-disabled="true" tabindex="-1" {% endif %}>
     Previous</a>
   <a href="{% if not paged.last %}{{ pagination.href.next | url }}{% else %}javascript:void(0){% endif %}"
     aria-label="Link to the next page"
     class="float-right bg-secondary-100 font-semibold w-24 border rounded border-accent-700 shadow-md text-accent-900 py-1
-     {% if not paged.last %}cursor-pointer hover:text-accent-700{% else %}cursor-default text-opacity-50{% endif %} text-center">Next</a>
+     {% if not paged.last %}cursor-pointer hover:text-accent-700{% else %}cursor-default bg-secondary-200 text-secondary-700{% endif %} text-center"
+     {% if paged.first %}aria-disabled="true" tabindex="-1" {% endif %}>Next</a>
 </div>
