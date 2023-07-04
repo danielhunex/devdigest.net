@@ -45,12 +45,12 @@
 <body class="flex flex-col min-h-screen bg-secondary-50 text-secondary-800 break-words">
   {% include "partials/header.njk" %}
   <div class="flex flex-grow flex-col md:flex-row">
-    <div class="bg-accent-50 p-4 hidden md:flex md:w-1/4">
+    <div class="bg-accent-50 p-4 hidden md:flex md:w-1/6">
       <div class="mb-4">
         <img src="/assets/img/me.jpg" alt="Blog Owner" class="rounded-full w-24 h-24 object-cover object-center" />
       </div>
     </div>
-    <main class="bg-secondary-50 mx-7 lg:mx-6 mt-4 md:w-3/4 flex-grow">
+    <main class="bg-secondary-50 mx-7 lg:mx-6 mt-4 md:w-5/6 flex-grow">
       {% if layout === "post" %}
       {{ content | safe }}
       {% else %}
