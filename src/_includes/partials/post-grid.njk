@@ -1,7 +1,7 @@
 {%- set lazyImage = "data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%201%201'%20height%3D'500'%20width%3D'960'%20style%3D'background-color%3Argb(203%2C213%2C224)'%2F%3E" -%}
 
 {% for post in paged.posts %}
-<article class="border-b-2 border-secondary-300 rounded-lg shadow-sm mb-8">
+<article class="border-b-2 border-secondary-100 rounded-lg shadow-sm mb-8">
   <div>
     <div class="w-full">
       <h2 class="text-2xl font-bold text-secondary mb-4">
@@ -23,10 +23,10 @@
         <div class="md:w-2/3 w-full">
 
           <p class="text-secondary-600 mb-4">{{ post.data.page.excerpt }}</p>
-          <a class="flex items-center text-sm text-accent-700 font-medium mb-4" href="{{ post.url }}"
+          <a class="flex items-center text-sm text-accent-900 font-medium mb-4" href="{{ post.url }}"
             aria-label="Link to {{ post.url }}">
             <span class="relative flex items-center">Read more
-              <svg class="relative overflow-visible ml-2 mt-1 self-center text-accent-700" width="3" height="6"
+              <svg class="relative overflow-visible ml-2 mt-1 self-center text-accent-900" width="3" height="6"
                 viewBox="0 0 3 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round">
                 <path d="M0 0L3 3L0 6"></path>
