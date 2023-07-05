@@ -34,6 +34,7 @@
   "homepage": "https://github.com/danielhunex/devdigest.net#readme",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@tailwindcss/typography": "^0.5.9",
     "any-shell-escape": "^0.1.1",
     "autoprefixer": "^10.4.14",

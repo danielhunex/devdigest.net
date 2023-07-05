@@ -29,6 +29,8 @@ module.exports = (config) => {
     excerpt_separator: "<!-- excerpt -->"
   });
 
+  config.addPlugin(require("@11ty/eleventy-plugin-syntaxhighlight"))
+  
   return {
     dir: {
       input: 'src',
