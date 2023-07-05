@@ -1,8 +1,14 @@
 [
     
     {
+        "url": "/csharp-8-new-features/",
+        "title": "Series: Exploring New Features in C# (Version 7 to 11): Article 2: New Features in C# 8",
+        "date": "4 July 2023 08:00 AM"
+    },
+    
+    {
         "url": "/csharp-7-new-features/",
-        "title": "Series: Exploring New Features in C# (Version 7 to 11)",
+        "title": "Series: Exploring New Features in C# (Version 7 to 11): Article 1: New Features in C# 7",
         "date": "4 July 2023 03:00 AM"
     }
     
