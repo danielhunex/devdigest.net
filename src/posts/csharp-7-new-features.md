@@ -1,5 +1,5 @@
 ---
-title: "Series: Exploring New Features in C# (Version 7 to 11)"
+title: "Series: Exploring New Features in C# (Version 7 to 11): Article 1: New Features in C# 7"
 date: 2023-07-04T03:00
 thumb: "literal_improvement.png"
 tags: 
@@ -7,8 +7,6 @@ tags:
     - .NET
     - CSharp
 ---
-
-# Article 1: New Features in C# 7
 
 In this series of article titled "Exploring New Features in C#",we will see the new features introduced in C# version of 7 to 11. Over the years,C# 7 introduced several exciting features and enhancements that improved the developer experience and made the language more powerful. In this article, we will explore three major features added in C# 7 along with code snippets demonstrating their usage.
 
