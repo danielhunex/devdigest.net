@@ -42,9 +42,13 @@ skimming it. Reviewing it, the way you'd review a config change.
 ## So I built a viewer that takes it seriously
 
 Nothing glamorous. [MarkGlass](https://markglass.app/) is a markdown viewer
-that renders complex documents properly: real tables, diagrams, maths,
-syntax-highlighted code, a table of contents you can navigate a 900-line file
-with, find-in-page, dark mode, clean printing.
+that renders complex documents properly:
+
+- Real tables, including nested ones
+- Diagrams (Mermaid) and maths (KaTeX)
+- Syntax-highlighted code, with fences that scroll instead of wrapping
+- A table of contents you can navigate a 900-line file with
+- Find-in-page, dark mode, clean printing
 
 It's built for a specific job that most markdown tools aren't: reading a
 document someone else wrote. Every editor-plus-preview tool — Dillinger,
@@ -52,6 +56,11 @@ StackEdit, the VS Code preview pane — assumes you're the author, and gives hal
 the screen to an editing pane you don't need. MarkGlass is just the reading
 half. Full width, nothing to configure, drag a file in or open a link and it's
 just the document.
+
+**And it's entirely client-side.** Everything above happens in your browser —
+there's no server in the loop, and nothing you open is ever uploaded anywhere.
+That matters more than it used to, since a lot of what people paste in are
+work documents and agent instructions they'd rather not hand to a third party.
 
 The kind of tool nobody writes a press release about and everybody uses forty
 times a day.
@@ -90,12 +99,16 @@ Some of it is written specifically to instruct a model. That makes a markdown
 file a realistic attack surface rather than a theoretical one, and it makes
 "render this document safely" a security requirement instead of a checkbox.
 
-So MarkGlass treats every document as untrusted. Scripts, iframes, forms and
-embedded style blocks are stripped entirely. Event handlers are removed. Links
-are validated twice. None of that is clever. It just used to feel like overkill
-for a documentation tool, and it doesn't anymore.
+So MarkGlass treats every document as untrusted:
 
-Everything runs in the browser. Nothing you open is uploaded anywhere.
+- Scripts, iframes, forms and embedded style blocks are stripped entirely
+- Event handlers are removed
+- Links are validated twice
+
+None of that is clever. It just used to feel like overkill for a documentation
+tool, and it doesn't anymore. It also costs nothing extra to get right here,
+since — worth repeating — the document never leaves your browser in the first
+place. There's no upload step where things could go wrong.
 
 ## The wider point
 
