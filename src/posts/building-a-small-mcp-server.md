@@ -16,7 +16,7 @@ The agent wasn't the difficult part. I already had that. But I needed two things
 - 1. I need to connect to the Teams' channel via mcp. For this, I used Work IQ. Easy integration.
 - 2. Filtering of the messages by dates, by title etc and return list of PR links. This is when I decided to write a small server that does filtering of Team's channel messages by title and date and provide me a list of PRs. Then expose this server as local mcp server.
 
-I didn't need a big integration platform. I needed a small tool that my agent could discover and call when it needed information. Once I started thinking about it that way, the server itself was surprisingly ordinary.
+I didn't need a big integration platform. I needed a small tool that my agent could discover and call when it needed information.
 
 The Teams workflow has a few moving pieces, so I'll use a simpler example here: a tool that searches local troubleshooting notes. It shows the same idea without needing a Teams connection, an Azure subscription, or credentials.
 
