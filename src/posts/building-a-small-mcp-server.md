@@ -60,7 +60,7 @@ cd runbook-mcp
 npm init -y
 npm install @modelcontextprotocol/server zod
 ```
-Alternatively, clone my repo:https://github.com/danielhunex/runbook-mcp-example/branches and do `npm install` in the root directory.
+Alternatively, clone my repo:[runbook-mcp-example](https://github.com/danielhunex/runbook-mcp-example/branches) and do `npm install` in the root directory.
 
 I'm using version 2 of the MCP TypeScript SDK, but writing the example in plain JavaScript. There's nothing to compile.
 
