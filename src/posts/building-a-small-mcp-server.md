@@ -12,9 +12,10 @@ tags:
 I was working on a way to pick up pull-request review requests from a Teams channel and hand them to a review agent in VS Code.
 <!-- excerpt -->
 
-The agent wasn't the difficult part. I already had that. But I needed two things. 
-- 1. I need to connect to the Teams' channel via mcp. For this, I used Work IQ. Easy integration.
-- 2. Filtering of the messages by dates, by title etc and return list of PR links. This is when I decided to write a small server that does filtering of Team's channel messages by title and date and provide me a list of PRs. Then expose this server as local mcp server.
+The agent wasn't the difficult part. I already had that. But I needed two things:
+
+1. A connection to the Teams channel through MCP. For this, I used Work IQ, which was an easy integration.
+2. A way to filter the messages by date and title and return a list of PR links. This is where I decided to write a small server that filters the Teams channel messages and gives me a list of PRs, then expose it as a local MCP server.
 
 I didn't need a big integration platform. I needed a small tool that my agent could discover and call when it needed information.
 
@@ -36,13 +37,13 @@ The whole job is basically this:
 search_runbooks("package restore") --> matching notes
 ```
 
-MCP gives VS Code a standard way to discover that function, understand its arguments, and call it. The lookup logic is still mine. Note I am developing this within my local box, for my day to day usage in vs code. If you need the mcp server, accessible in a hosted agent, the process becomes a little more involved including authentication/authorization, telemetry etc.
+MCP gives VS Code a standard way to discover that function, understand its arguments, and call it. The lookup logic is still mine. Note that I'm building this on my local machine for day-to-day use in VS Code. If you need the MCP server to be accessible from a hosted agent, the process becomes more involved: authentication, authorization, telemetry, and so on.
 
 ## A local server is just a process
 
-The word *server* initially makes this sound heavier than it is. But it is just nothing other than a running API, e.g a node API app; and take that one further step and run it as a process using **stdio**. 
+The word *server* initially makes this sound heavier than it is. A local MCP server is just a program, here a small Node.js script, running as a process on your machine.
 
-For this example, I'm using **stdio**, which means VS Code starts a Node.js process and talks to it over standard input and output. No web server, open port, or deployment is involved.
+It talks to the client over **stdio**, which means VS Code starts a Node.js process and talks to it over standard input and output. No web server, open port, or deployment is involved.
 
 ```text
 VS Code agent -> MCP tool call -> Node.js process -> runbook entries
@@ -52,7 +53,7 @@ The server can live in its own directory, away from whatever repository I have o
 
 ## Build the smallest useful version
 
-You'll need Node.js 20 or newer for the server. If you want to use the MCP Inspector later in this walkthrough, use Node.js 22.19 or newer. In a PowerShell terminal:
+You'll need Node.js 20 or newer for the server. If you want to use the MCP Inspector later in this walkthrough, check its current Node.js requirement first: version 2.14 needs Node.js 22.23.4+, 24.22.1+, or 26.12.1+. In a PowerShell terminal:
 
 ```powershell
 mkdir runbook-mcp
@@ -60,7 +61,8 @@ cd runbook-mcp
 npm init -y
 npm install @modelcontextprotocol/server zod
 ```
-Alternatively, clone my repo:[runbook-mcp-example](https://github.com/danielhunex/runbook-mcp-example/branches) and do `npm install` in the root directory.
+
+Alternatively, clone my companion repo, [runbook-mcp-example](https://github.com/danielhunex/runbook-mcp-example), and run `npm ci` in its root directory. It also includes a small test suite you can run with `npm test`.
 
 I'm using version 2 of the MCP TypeScript SDK, but writing the example in plain JavaScript. There's nothing to compile.
 
@@ -150,10 +152,10 @@ The `readOnlyHint` annotation tells clients what to expect. It isn't a permissio
 First, check that Node can start the server:
 
 ```powershell
-npm install
-npm start   // or node server.mjs
-
+node server.mjs
 ```
+
+If you cloned the companion repo, `npm start` does the same thing.
 
 You'll see:
 
@@ -163,7 +165,7 @@ local-runbooks: ready on stdio
 
 Then it appears to do nothing. That's fine. It's waiting for an MCP client to connect. Press **Ctrl+C** to stop this manual run; VS Code will launch its own process later.
 
-Note: One detail is easy to miss: don't use `console.log()` for startup messages in a stdio MCP server. Standard output carries the MCP protocol messages. A stray log line can break the conversation between the client and server. Use `console.error()` for diagnostics.
+One detail is easy to miss: don't use `console.log()` for startup messages in a stdio MCP server. Standard output carries the MCP protocol messages. A stray log line can break the conversation between the client and server. Use `console.error()` for diagnostics.
 
 Before involving an AI agent, I like testing the tool directly. The [MCP Inspector](https://modelcontextprotocol.io/docs/tools/inspector) can launch the process and call its tools:
 
@@ -188,10 +190,12 @@ In VS Code, open the Command Palette and run **MCP: Add Server**.
 5. Review the trust prompt and make sure the tool is enabled for the agent you're using.
 
 ```text
-node "C:\Users\YOUR_NAME\runbook-mcp\server.mjs" // use the actual location you created the server
+node "C:\Users\YOUR_NAME\runbook-mcp\server.mjs"
 ```
 
-Alternatively, you can edit your mcp.json  as in:
+Use the actual location where you created the server.
+
+Alternatively, you can edit your `mcp.json` directly:
 
 ```json
 {
@@ -208,9 +212,11 @@ Alternatively, you can edit your mcp.json  as in:
 }
 ```
 
-The configuration choices depend on your VS Code version and agent harness. I prefer the guided flow here because the supported MCP configuration format isn't identical across every client. and start the mcp server ( you can use **CTRL+P** to launch the command selector in vs code; then expand *MCP: List Servers* and run it. Or you can open the mcp.json file itself and run it directory on vscode) 
+The configuration choices depend on your VS Code version and agent harness. I prefer the guided flow here because the supported MCP configuration format isn't identical across every client.
 
-![Running the mcp server directly in vscode](/assets/img/mcp-server-running.png)
+Then start the MCP server. Open the Command Palette (**Ctrl+Shift+P**), run **MCP: List Servers**, select `local-runbooks`, and start it. Or open `mcp.json` itself and use the **Start** action that VS Code shows above the server entry.
+
+![The local-runbooks MCP server running in VS Code](/assets/img/mcp-server-running.png)
 
 Now ask the agent something specific:
 
@@ -218,8 +224,7 @@ Now ask the agent something specific:
 
 The important part is the **tool call**, not just the final answer. Expand the call in chat and check which tool was invoked and what it returned.
 
-
-For the sample data, the result will contain something like ( shown in the screenshot below):
+For the sample data, the result will contain something like this (also shown in the screenshot below):
 
 ```json
 {
@@ -235,17 +240,18 @@ For the sample data, the result will contain something like ( shown in the scree
   ]
 }
 ```
-      ![Agent run in vscode](/assets/img/agent-run.png)
+
+![Agent run in VS Code](/assets/img/agent-run.png)
 
 I've shortened the checks in that example. The real response contains all three.
 
 An agent can give decent advice about package restore without using this tool at all. I want to know it retrieved *my* runbook, not merely that it generated a reasonable answer.
 
-It's also worth trying a query that doesn't match anything. That should return an empty list, not an error. A blank query should be rejected by the schema. If I later switch from the array to a file or API, a failed read should be reported as an error, not disguised as “no matches.”
+It's also worth trying a query that doesn't match anything. That should return an empty list, not an error. A blank query should be rejected by the schema. If I later switch from the array to a file or API, a failed read should be reported as an error, not disguised as "no matches."
 
 ## Final thoughts
 
-Searching notes and executing commands are very different permissions. The distinction is even more important in the PR-review automation that prompted this 101 article. Finding a review request, analyzing a diff, posting a comment, and approving a PR should be separate operations with their own controls.
+Searching notes and executing commands are very different permissions. The distinction is even more important in the PR-review automation that prompted this introductory article. Finding a review request, analyzing a diff, posting a comment, and approving a PR should be separate operations with their own controls.
 
 There are a few practical limits to remember:
 
