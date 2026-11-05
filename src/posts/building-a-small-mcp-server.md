@@ -243,7 +243,6 @@ For the sample data, the result will contain something like this (also shown in 
 
 ![Agent run in VS Code](/assets/img/agent-run.png)
 
-I've shortened the checks in that example. The real response contains all three.
 
 An agent can give decent advice about package restore without using this tool at all. I want to know it retrieved *my* runbook, not merely that it generated a reasonable answer.
 
