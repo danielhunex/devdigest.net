@@ -1,5 +1,5 @@
 ---
-title: "I Built a Small MCP Server for a Tool I Wanted in VS Code"
+title: "Building Your First Tiny MCP Server"
 date: 2026-11-05T08:00
 thumb: "building-a-small-mcp-server.png"
 description: "A local MCP server is just a small Node.js process that VS Code talks to over stdio. Here's how I built one, tested it with the MCP Inspector, and hooked it up to an agent."
