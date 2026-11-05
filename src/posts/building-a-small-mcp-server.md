@@ -40,7 +40,7 @@ MCP gives VS Code a standard way to discover that function, understand its argum
 
 ## A local server is just a process
 
-The word *server* initially makes this sound heavier than it is. But it is just nothing other than a running API, e.g a node API app; and take that one further step and run it as a process uing **stdio**. 
+The word *server* initially makes this sound heavier than it is. But it is just nothing other than a running API, e.g a node API app; and take that one further step and run it as a process using **stdio**. 
 
 For this example, I'm using **stdio**, which means VS Code starts a Node.js process and talks to it over standard input and output. No web server, open port, or deployment is involved.
 
