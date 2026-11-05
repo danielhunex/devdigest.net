@@ -9,8 +9,8 @@ module.exports = (config) => {
   // transform's outputs are written could clobber them). Copy these two
   // directories ourselves, synchronously, before any template is rendered.
   config.on('eleventy.before', () => {
-    fs.cpSync('src/assets/img', '_site/assets/img', { recursive: true });
-    fs.cpSync('src/posts/img', '_site/assets/img', { recursive: true });
+    fs.cpSync('src/assets/img', '_site/assets/img', { recursive: true, preserveTimestamps: true });
+    fs.cpSync('src/posts/img', '_site/assets/img', { recursive: true, preserveTimestamps: true });
   });
   config.addPassthroughCopy({
     "src/_includes/icons": "icons/"
