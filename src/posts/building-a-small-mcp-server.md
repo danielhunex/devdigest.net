@@ -1,6 +1,16 @@
-# I Built a Small MCP Server for a Tool I Wanted in VS Code
+---
+title: "I Built a Small MCP Server for a Tool I Wanted in VS Code"
+date: 2026-11-05T08:00
+thumb: "building-a-small-mcp-server.png"
+description: "A local MCP server is just a small Node.js process that VS Code talks to over stdio. Here's how I built one, tested it with the MCP Inspector, and hooked it up to an agent."
+tags:
+    - MCP
+    - Agents
+    - Tools
+---
 
 I was working on a way to pick up pull-request review requests from a Teams channel and hand them to a review agent in VS Code.
+<!-- excerpt -->
 
 The agent wasn't the difficult part. I already had that. But I needed two things. 
 - 1. I need to connect to the Teams' channel via mcp. For this, I used Work IQ. Easy integration.
@@ -164,7 +174,8 @@ npx @modelcontextprotocol/inspector node server.mjs
 In the Inspector, connect to the server, open **Tools**, select `search_runbooks`, and pass `package restore` as the query. You should get one match with the ID `package-restore`.
 
 That test is useful because it separates two possible problems: a broken MCP server and an agent that simply chose not to call it.
-![Inspector view](img\mcp-server-running.png)
+
+![Inspector view](/assets/img/inspector-view.png)
 
 ## Give VS Code the tool
 
@@ -199,14 +210,15 @@ Alternatively, you can edit your mcp.json  as in:
 
 The configuration choices depend on your VS Code version and agent harness. I prefer the guided flow here because the supported MCP configuration format isn't identical across every client. and start the mcp server ( you can use ctrl+p to launch the command selector in vs code; list the mcp server and run it. Or you can open the mcp.json file itself and run it directory on vscode) 
 
-![Running the mcp server directly in vscode](img\inspector-view.png)
+![Running the mcp server directly in vscode](/assets/img/mcp-server-running.png)
+
 Now ask the agent something specific:
 
 > Search "package restore". Show the runbook ID and summarize the checks. Don't run commands or change files.
 
 The important part is the **tool call**, not just the final answer. Expand the call in chat and check which tool was invoked and what it returned.
 
-![Agent run in vscode](img\agent-run.png)
+![Agent run in vscode](/assets/img/agent-run.png)
 
 For the sample data, the result will contain something like:
 
