@@ -208,7 +208,7 @@ Alternatively, you can edit your mcp.json  as in:
 }
 ```
 
-The configuration choices depend on your VS Code version and agent harness. I prefer the guided flow here because the supported MCP configuration format isn't identical across every client. and start the mcp server ( you can use ctrl+p to launch the command selector in vs code; list the mcp server and run it. Or you can open the mcp.json file itself and run it directory on vscode) 
+The configuration choices depend on your VS Code version and agent harness. I prefer the guided flow here because the supported MCP configuration format isn't identical across every client. and start the mcp server ( you can use **CTRL+P** to launch the command selector in vs code; then expand *MCP: List Servers* and run it. Or you can open the mcp.json file itself and run it directory on vscode) 
 
 ![Running the mcp server directly in vscode](/assets/img/mcp-server-running.png)
 
@@ -218,9 +218,8 @@ Now ask the agent something specific:
 
 The important part is the **tool call**, not just the final answer. Expand the call in chat and check which tool was invoked and what it returned.
 
-![Agent run in vscode](/assets/img/agent-run.png)
 
-For the sample data, the result will contain something like:
+For the sample data, the result will contain something like ( shown in the screenshot below):
 
 ```json
 {
@@ -236,6 +235,7 @@ For the sample data, the result will contain something like:
   ]
 }
 ```
+      ![Agent run in vscode](/assets/img/agent-run.png)
 
 I've shortened the checks in that example. The real response contains all three.
 
