@@ -9,17 +9,12 @@ tags:
     - Tools
 ---
 
-I was working on a way to pick up pull-request review requests from a Teams channel and hand them to a review agent in VS Code.
+This post shows you how to build your first tiny MCP server: a tool that lets your agent search your own troubleshooting runbooks instead of guessing.
 <!-- excerpt -->
 
-The agent wasn't the difficult part. I already had that. But I needed two things:
+It's a good first project. It's small enough to read in one sitting, but it covers the parts that matter: a tool with a typed input schema, a stdio transport, and a result the agent can verify. Once it works, you can replace the in-memory array with a real data source, such as a wiki API, a database, or a Teams connector, without changing the tool contract.
 
-1. A connection to the Teams channel through MCP. For this, I used Work IQ, which was an easy integration.
-2. A way to filter the messages by date and title and return a list of PR links. This is where I decided to write a small server that filters the Teams channel messages and gives me a list of PRs, then expose it as a local MCP server.
-
-I didn't need a big integration platform. I needed a small tool that my agent could discover and call when it needed information.
-
-The Teams workflow has a few moving pieces, so I'll use a simpler example here: a tool that searches local troubleshooting notes. It shows the same idea without needing a Teams connection, an Azure subscription, or credentials.
+The example uses local notes, so it needs no cloud account, credentials, or external service.
 
 ## The tool I want the agent to have
 
